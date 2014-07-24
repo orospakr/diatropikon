@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+'use strict';
+
+process.title = "kube";
+
+// investigate if ember-cli is using the resolve library for any
+// reasons other than asynchronosity.
+var kube = require("../lib/kube.js");
+
+
+// TODO: warn if this copy of Kube is out of date: look up in npm
+// (well, at least in tasks that are long enough that the cost is
+// minimal)
+

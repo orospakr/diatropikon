@@ -1,0 +1,19 @@
+{
+  "name": "Kube",
+  "version": "0.1.0",
+  "description": "Devops ergonomics for Kubernetes.",
+  "main": "kube",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "devops",
+    "kubernetes"
+  ],
+  "author": "Andrew Clunis <andrew@orospakr.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.2.2",
+    "request": "^2.37.0"
+  }
+}
