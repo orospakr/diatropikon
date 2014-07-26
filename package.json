@@ -1,5 +1,5 @@
 {
-  "name": "Kube",
+  "name": "Diatropikon",
   "version": "0.1.0",
   "description": "Devops ergonomics for Kubernetes.",
   "main": "kube",
@@ -8,7 +8,8 @@
   },
   "keywords": [
     "devops",
-    "kubernetes"
+    "kubernetes",
+    "docker"
   ],
   "author": "Andrew Clunis <andrew@orospakr.ca>",
   "license": "MIT",

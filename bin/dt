@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 'use strict';
 
-process.title = "kube";
+process.title = "dt";
 
 // investigate if ember-cli is using the resolve library for any
 // reasons other than asynchronosity.
-var kube = require("../lib/kube.js");
+var kube = require("../lib/diatropikon.js");
 
 
-// TODO: warn if this copy of Kube is out of date: look up in npm
+// TODO: warn if this copy of Diatropikon is out of date: look up in npm
 // (well, at least in tasks that are long enough that the cost is
 // minimal)
 
 // TODO: if we're globally installed, check if there is a locally
-// installed kube (node_modules/bin... beside the Kubefile), run that
+// installed kube (node_modules/bin... beside the Diafile), run that
 // instead.
