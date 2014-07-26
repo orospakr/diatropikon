@@ -27,7 +27,9 @@ directory to your path temporarily) and:
 
     $ npm install -g kube
 
-Create your project:
+Create your project (it is not recommended that you add Kube to an
+existing project directory; it should be in its own repository or at
+least its own directory):
 
     $ kube init mystack
     $ cd mystack

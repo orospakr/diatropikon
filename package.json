@@ -14,6 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.2.2",
+    "chalk": "^0.5.1",
+    "extend": "^1.3.0",
+    "nomnom": "^1.8.0",
     "request": "^2.37.0"
   }
 }

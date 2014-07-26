@@ -12,3 +12,6 @@ var kube = require("../lib/kube.js");
 // (well, at least in tasks that are long enough that the cost is
 // minimal)
 
+// TODO: if we're globally installed, check if there is a locally
+// installed kube (node_modules/bin... beside the Kubefile), run that
+// instead.
