@@ -18,8 +18,8 @@ Copyright (C) 2014 Andrew Clunis.  License is MIT. See
 * Kube's method of scoping the definitions of the above types
 * Volume types
 
-(Note; this project is still in progress: a lot of the below README is
-serving as a design document in the meantime)
+*(Note; this project is still in progress: a lot of the below README is
+serving as a design document in the meantime)*
 
 ## Usage
 
@@ -30,9 +30,9 @@ its bin directory to your path temporarily) and:
 
     $ npm install -g diatropikon
 
-Create your project (it is not recommended that you add Dilotiko to an
-existing project directory; it should be in its own repository or at
-least its own directory):
+Create your project (it is not recommended that you add Diatropikon to
+an existing project directory; it should be in its own repository or
+at least its own directory):
 
     $ dt init mystack
     $ cd mystack
