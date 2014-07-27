@@ -113,8 +113,8 @@ Kubernetes in order to test against:
 
 Golang is an awesome language, but since this project's goal is to
 allow developers to fluidly manage their ops code, with easy access to
-a turing complete DSL, a compiled language like Go bears too much
-impedance.
+a turing complete DSL, a compiled language like Go (particularly its
+lack of dynamic loading) bears too much impedance.
 
 2. Why not Ruby?
 
