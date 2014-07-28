@@ -13,9 +13,11 @@ Copyright (C) 2014 Andrew Clunis.  License is MIT. See
 
 ## First Principles
 
+TODO
+
 * The four Kubernetes data types (and their nesting!)
-* the scope of Kube
-* Kube's method of scoping the definitions of the above types
+* the scope of Diatropikon
+* Dia's method of scoping the definitions of the above types
 * Volume types
 
 *(Note; this project is still in progress: a lot of the below README is
@@ -29,6 +31,9 @@ checkout of this project as per the Development section below and add
 its bin directory to your path temporarily) and:
 
     $ npm install -g diatropikon
+
+This will install the `dt` command, which you can use to interact with
+your Diatropikon-powered Kubernetes projects.
 
 Create your project (it is not recommended that you add Diatropikon to
 an existing project directory; it should be in its own repository or
@@ -57,7 +62,7 @@ Now, generate a [pod] (TODO hyperlink to Kubernetes docs):
     $ dt generate service minecraft minecraft -p 25565
 
 For commands that interact with a cluster, it'll honour the
-environment variable `KUBE_ENV` for selecting which environment (that
+environment variable `DIA_ENV` for selecting which environment (that
 is, configured cluster) you want to interact with.  However, it'll
 default to `local`.
 
@@ -92,6 +97,10 @@ So, directory structure (items in parens are example names):
 └─ replicators
 ```
 
+### Workflows
+
+TODO.  Developer user stories.
+
 ## Development
 
 Install the local dependencies:
@@ -106,6 +115,9 @@ Kubernetes in order to test against:
     # then, port forward the Kubernetes API server locally:
     $ vagrant ssh -- -L8080:localhost:8080
 
+Now you can run the Diatropikon program directly in its repo:
+
+    $ DEBUG=1 DIA_ENV=local ./bin/dt -d example deploy
 
 ## FAQ
 
@@ -118,8 +130,16 @@ lack of dynamic loading) bears too much impedance.
 
 2. Why not Ruby?
 
-It was a toss-up, but I found that node was a bit easier for users to
-get started with, more friendly to the various major Kubernetes
-stakeholders, and better on network IO.
+It was a toss-up, but I found that Node was a bit easier for users to
+get started with, more friendly to the various major stakeholders in
+the Kubernetes ecosystem, and better on network IO.
 
-3.
+3. 20 megs of dependencies?!
+
+Yeah, I know. Node.js' method of nesting dependencies means that many
+dependencies get expanded into the `node_modules` directory multiple
+times.  Sorry.
+
+4. What encoding should project files be written in?
+
+Everything is read as UTF-8.
