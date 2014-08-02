@@ -1,7 +1,9 @@
 # Diatropikon
 
-Devops ergonomics for Kubernetes.  Capture and define your
-Kubernetes-powered ops pipeline as code, all in a git repository.
+Devops ergonomics for
+[Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes).
+Capture and define your Kubernetes-powered ops pipeline as code, all
+in a git repository.
 
 Define your Kubernetes cluster in code (with your option of a shiny
 CoffeeScript DSL, flat JSON, or YAML) and build your Docker
