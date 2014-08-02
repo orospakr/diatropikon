@@ -1,0 +1,20 @@
+{
+    "id": "",
+    "desiredState": {
+        "manifest": {
+            "containers": [
+                {
+                    "name": "minecraft_server",
+                    "image": "orospakr/minecraft_server",
+                    "ports": [{
+                        "containerPort": 25565,
+                        "hostPort": 25565
+                    }]
+                }
+            ]
+        }
+    },
+    "labels": {
+        "name": "minecraft"
+    }
+}
