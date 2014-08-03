@@ -1,0 +1,6 @@
+{
+    "id": "minecraft",
+    "port": 25565,
+    "labels": {"name": "minecraft"},
+    "selector": {"name": "minecraft"}
+}

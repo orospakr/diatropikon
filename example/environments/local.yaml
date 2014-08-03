@@ -1,2 +1,2 @@
 kubernetes:
-  apiserver: http://localhost:8080/
+  apiserver: http://localhost:8080

@@ -1,15 +1,22 @@
 {
-    "id": "",
+    "id": "minecraft-server",
     "desiredState": {
         "manifest": {
+            "version": "v1beta1",
             "containers": [
                 {
-                    "name": "minecraft_server",
-                    "image": "orospakr/minecraft_server",
+                    "name": "minecraft-server",
+                    "image": "maxexcloo/minecraft",
                     "ports": [{
                         "containerPort": 25565,
                         "hostPort": 25565
-                    }]
+                    }],
+                    "env": [
+                        {"name": "MEMORY",
+                         "value": "1024"},
+                        {"name": "VERSION",
+                         "value": "1.7.10"}
+                    ]
                 }
             ]
         }
