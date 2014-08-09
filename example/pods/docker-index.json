@@ -1,0 +1,28 @@
+{
+    "id": "docker-index",
+    "desiredState": {
+        "manifest": {
+            "version": "v1beta1",
+            "containers": [
+                {
+                    "name": "docker-index",
+                    "image": "registry",
+                    "ports": [{
+                        "containerPort": 5000,
+                        "hostPort": 5000
+                    }],
+                    "env": [
+                        {"name": "SETTING_FLAVOUR",
+                         "value": "local"},
+                        {"name": "STORAGE_BACKEND",
+                         "value": "sqlalchemy"}
+                    ]
+                }
+            ]
+        }
+    },
+    "labels": {
+        "name": "diatropikon_index",
+        "diatropikon": "index"
+    }
+}
