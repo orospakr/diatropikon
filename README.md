@@ -11,12 +11,14 @@ serving as a design document in the meantime)*
   CoffeeScript DSL, flat JSON, or YAML) and build your Docker
   containers, or libraries of Kubernetes components for use in multiple
   clusters.
-* Build and run your infrastructure developer laptops, on multiple
-  cloud platforms, in multiple environments.
+* Build and run your infrastructure on developer laptops, multiple
+  cloud platforms, and in multiple environments.
 * Treat infrastructure modifications as peer-reviewable code changes.
 * Leverage the growing Docker and Kubernetes ecosystems.
 * Low-impedance addition of new microservices to your cloud, but not
   as an opaque free-for-all.
+
+Task board: https://trello.com/b/Q0I6vxg1/diatropikon
 
 Copyright (C) 2014-2015 Andrew Clunis.  License is MIT. See
 [LICENSE](./LICENSE).
