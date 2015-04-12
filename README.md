@@ -1,16 +1,24 @@
 # Diatropikon
 
-Devops ergonomics for
-[Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes).
-Capture and define your Kubernetes-powered ops pipeline as code, all
-in a git repository.
+Devops ergonomics for [Kubernetes](http://kubernetes.io).  Capture
+and define your cloud infrastructure as a Kubernetes-powered ops
+pipeline as code, all in a git repository.
 
-Define your Kubernetes cluster in code (with your option of a shiny
-CoffeeScript DSL, flat JSON, or YAML) and build your Docker
-containers, or libraries of Kubernetes components for use in multiple
-clusters.
+*(Note; this project is still in progress: much of the below README is
+serving as a design document in the meantime)*
 
-Copyright (C) 2014 Andrew Clunis.  License is MIT. See
+* Define your Kubernetes cluster in code (with your option of a shiny
+  CoffeeScript DSL, flat JSON, or YAML) and build your Docker
+  containers, or libraries of Kubernetes components for use in multiple
+  clusters.
+* Build and run your infrastructure developer laptops, on multiple
+  cloud platforms, in multiple environments.
+* Treat infrastructure modifications as peer-reviewable code changes.
+* Leverage the growing Docker and Kubernetes ecosystems.
+* Low-impedance addition of new microservices to your cloud, but not
+  as an opaque free-for-all.
+
+Copyright (C) 2014-2015 Andrew Clunis.  License is MIT. See
 [LICENSE](./LICENSE).
 
 ## First Principles
@@ -20,10 +28,7 @@ TODO
 * The four Kubernetes data types (and their nesting!)
 * the scope of Diatropikon
 * Dia's method of scoping the definitions of the above types
-* Volume types
-
-*(Note; this project is still in progress: a lot of the below README is
-serving as a design document in the meantime)*
+* Storage and Volume types!
 
 ## Usage
 
@@ -89,19 +94,19 @@ So, directory structure (items in parens are example names):
 ├─ services
 │  ├─ (nginx.coffee)           - you can define an entire service (and dependencies)
 │  │                             inside a single file, as has been done here for the
-                                  nginx service...
+│  │                             nginx service...
 │  ├─ (minecraft)              - or, you can fragment them into their own directory
-                                  structure.
+│  │                             structure.
 │  │  ├─ service.coffee        - however, since you need to still define the base
-                                  type's directory, so add it here, as
-                                  <type_name>.coffee.
+│  │                             type's directory, so add it here, as
+│  │                             <type_name>.coffee.
 │  │  ├─ containers
 └─ replicators
 ```
 
 ### Workflows
 
-TODO.  Developer user stories.
+TODO.  Commonest developer user stories.
 
 ## Development
 
@@ -123,25 +128,23 @@ Now you can run the Diatropikon program directly in its repo:
 
 ## FAQ
 
-1. What is the rationale for JavaScript over Golang?
+1. What is the rationale for JavaScript over Golang/Ruby/Haskell/.net?
 
 Golang is an awesome language, but since this project's goal is to
 allow developers to fluidly manage their ops code, with easy access to
 a turing complete DSL, a compiled language like Go (particularly its
-lack of dynamic loading) bears too much impedance.
+lack of dynamic loading) bears too much impedance.  Moreover, I found
+that Node struct a decent balance between bit easier for user
+onboarding (installation ease and repeatability), more friendly to the
+various major stakeholders in the Kubernetes ecosystem, while still
+being decent for asynchronocity and IO.
 
-2. Why not Ruby?
-
-It was a toss-up, but I found that Node was a bit easier for users to
-get started with, more friendly to the various major stakeholders in
-the Kubernetes ecosystem, and better on network IO.
-
-3. 20 megs of dependencies?!
+2. 20 megs of dependencies?!
 
 Yeah, I know. Node.js' method of nesting dependencies means that many
 dependencies get expanded into the `node_modules` directory multiple
 times.  Sorry.
 
-4. What encoding should project files be written in?
+3. What encoding should project files be written in?
 
 Everything is read as UTF-8.
