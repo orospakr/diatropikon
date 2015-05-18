@@ -1,8 +1,8 @@
 # Diatropikon
 
-Devops ergonomics for [Kubernetes](http://kubernetes.io).  Capture
-and define your cloud infrastructure as a Kubernetes-powered ops
-pipeline as code, all in a git repository.
+Devops ergonomics for [Kubernetes](http://kubernetes.io).  Capture and
+define your cloud infrastructure as a Kubernetes-powered ops pipeline
+in code.
 
 *(Note; this project is still in progress: much of the below README is
 serving as a design document in the meantime)*
@@ -13,10 +13,13 @@ serving as a design document in the meantime)*
   clusters.
 * Build and run your infrastructure on developer laptops, multiple
   cloud platforms, and in multiple environments.
-* Treat infrastructure modifications as peer-reviewable code changes.
+* Treat infrastructure changes to the same peer code review process as the
+  rest of your code.
 * Leverage the growing Docker and Kubernetes ecosystems.
+* Knowable microservice orchestration
 * Low-impedance addition of new microservices to your cloud, but not
-  as an opaque free-for-all.
+  at the expense of visibility.
+
 
 Task board: https://trello.com/b/Q0I6vxg1/diatropikon
 
@@ -24,6 +27,10 @@ Copyright (C) 2014-2015 Andrew Clunis.  License is MIT. See
 [LICENSE](./LICENSE).
 
 ## First Principles
+
+Define your Docker containers, Kubernetes pods, services, and
+replication controllers as files, and Diatropikon will sync them into
+your Kubernetes cluster for you.
 
 TODO
 
@@ -33,6 +40,7 @@ TODO
 * Storage and Volume types!
 
 ## Usage
+
 
 To install Diatropikon globally, in order to get access to the tool in
 order to bootrap a new project (alternatively, you could use a
@@ -48,7 +56,7 @@ Create your project (it is not recommended that you add Diatropikon to
 an existing project directory; it should be in its own repository or
 at least its own directory):
 
-    $ dt init mystack
+    $ dt init mystack (TODO)
     $ cd mystack
     $ git init && git add .
 
@@ -136,10 +144,10 @@ Golang is an awesome language, but since this project's goal is to
 allow developers to fluidly manage their ops code, with easy access to
 a turing complete DSL, a compiled language like Go (particularly its
 lack of dynamic loading) bears too much impedance.  Moreover, I found
-that Node struct a decent balance between bit easier for user
-onboarding (installation ease and repeatability), more friendly to the
+that Node struck a decent balance between being easier for user
+onboarding (installation ease and repeatability), friendliness for the
 various major stakeholders in the Kubernetes ecosystem, while still
-being decent for asynchronocity and IO.
+being decent for developing with.
 
 2. 20 megs of dependencies?!
 
