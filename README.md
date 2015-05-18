@@ -16,7 +16,6 @@ serving as a design document in the meantime)*
 * Treat infrastructure changes to the same peer code review process as the
   rest of your code.
 * Leverage the growing Docker and Kubernetes ecosystems.
-* Knowable microservice orchestration
 * Low-impedance addition of new microservices to your cloud, but not
   at the expense of visibility.
 
