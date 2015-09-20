@@ -60,7 +60,7 @@ at least its own directory):
     $ git init && git add .
 
 Generate some containers:
-    
+
     $ dt generate container minecraft_server
     $ dt generate container minecraft_overviewer
 
@@ -74,7 +74,7 @@ Literate CoffeeScript DSL).
 Now, generate a [pod] (TODO hyperlink to Kubernetes docs):
 
     $ dt generate pod minecraft minecraft_server,minecraft_overviewer
-    
+
     $ dt generate service minecraft minecraft -p 25565
 
 For commands that interact with a cluster, it'll honour the
@@ -123,6 +123,14 @@ Install the local dependencies:
 
     $ npm install
 
+And fetch down the third-party TypeScript type mappings with DTSM:
+
+    $ ./node_modules/dtsm/bin/dtsm install
+
+And then run the TypeScript build:
+
+    $ ./node_modules/typescript/bin/tsc
+
 Then, bring up the included Vagrant VM that contains CoreOS and
 Kubernetes in order to test against:
 
@@ -131,7 +139,8 @@ Kubernetes in order to test against:
     # then, port forward the Kubernetes API server locally:
     $ vagrant ssh -- -L8080:localhost:8080
 
-Now you can run the Diatropikon program directly in its repo:
+Now you can run Diatropikon directly in its repo, against a bundled
+example project:
 
     $ DEBUG=1 DIA_ENV=local ./bin/dt -d example deploy
 
