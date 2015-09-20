@@ -1,9 +1,7 @@
 import util = require("util");
 
-class Command implements Operation {
+export abstract class Command implements Operation {
   summary: string = "UNSET!"
 	
-  execute() {
-		
-  }
+  abstract execute(project, kube)
 }

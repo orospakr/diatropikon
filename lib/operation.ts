@@ -2,5 +2,5 @@
 var util = require("util");
 
 interface Operation {
-    execute();
+    execute(project, kube);
 }

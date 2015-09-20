@@ -20,7 +20,7 @@
   "dependencies": {
     "bluebird": "^2.2.2",
     "chalk": "^0.5.1",
-    "cmdln": "^1.3.3",
+    "cmdln": "^3.3.0",
     "coffee-script": "^1.7.1",
     "dashdash": "^1.6.0",
     "dockerode": "^2.0.1",

@@ -1,8 +1,10 @@
 // The deploy command!
 
-var util = require("util");
+import util = require("util");
 
-var Command = require("../command");
+import command = require("../command");
+
+var logger = require("../logger");
 
 var Errors = require("../errors.js");
 var DiatropikonError = Errors.DiatropikonError;
@@ -10,12 +12,9 @@ var KubernetesError = Errors.KubernetesError;
 
 var Promise = require("bluebird");
 
-function Deploy() {
-    Command.call(this);
-}
-util.inherits(Deploy, Command);
-
-Deploy.prototype.execute = function(project, kube) {
+export class Deploy extends command.Command {
+  execute(project, kube) {
+    logger.error("FDfSSADFD");
     logger.info("Running deploy!");
 
     return Promise.all(project.pods.map(function(pod) {
@@ -31,6 +30,5 @@ Deploy.prototype.execute = function(project, kube) {
             return kube.postService(service.toJson());
         }));
     });
-};
-
-module.exports = Deploy;
+  }
+}
