@@ -12,9 +12,12 @@ var KubernetesError = Errors.KubernetesError;
 
 var Promise = require("bluebird");
 
+/**
+ * Ensure that your project definition has been fully pushed into the Kubernetes
+ * environment.
+ */
 export class Deploy extends command.Command {
   execute(project, kube) {
-    logger.error("FDfSSADFD");
     logger.info("Running deploy!");
 
     return Promise.all(project.pods.map(function(pod) {

@@ -1,7 +1,9 @@
 import util = require("util");
 
-export abstract class Command implements Operation {
+export class Command implements Operation {
   summary: string = "UNSET!"
 	
-  abstract execute(project, kube)
+  execute(project, kube) {
+    // TODO: make this abstract once VSCode gets proper TS 1.6 support
+  }
 }
