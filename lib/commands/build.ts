@@ -1,20 +1,25 @@
 // The Build command!  Build all of our docker container images.
 
-var util = require("util");
-var chalk = require("chalk");
+import util = require("util");
+
+import command = require("../command");
+
+var logger = require("../logger");
+
+var Errors = require("../errors.js");
+var DiatropikonError = Errors.DiatropikonError;
+var KubernetesError = Errors.KubernetesError;
 
 var Promise = require("bluebird");
 
 var DirectBuilder = require("../direct_builder.js");
 
-var Command = require("../command");
+/**
+ * Build any of your project's container images, as required.
+ */
+export class Build extends command.Command {
 
-function Build() {
-    Command.call(this);
-}
-util.inherits(Build, Command);
-
-Build.prototype.execute = function(project, kube) {
+  execute(project, kube) {
     logger.info("Running build!");
 
     // For now, until Kube supports running one-off jobs (with
@@ -45,6 +50,6 @@ Build.prototype.execute = function(project, kube) {
     return Promise.map(project.images, function(image) {
         return builder.build(image);
     });
-};
+  }
+}
 
-module.exports = Build;
