@@ -1,16 +1,24 @@
 // The status command!
 
-var util = require("util");
+import util = require("util");
+
+import command = require("../command");
+
+
 var chalk = require("chalk");
 
-var Command = require("../command");
+var logger = require("../logger");
 
-function Status() {
-    Command.call(this);
-}
-util.inherits(Status, Command);
+var Errors = require("../errors.js");
+var DiatropikonError = Errors.DiatropikonError;
+var KubernetesError = Errors.KubernetesError;
 
-Status.prototype.execute = function(project, kube) {
+var Promise = require("bluebird");
+
+
+export class Status extends command.Command {
+  
+  execute(project, kube) {
     logger.info("Running status!");
 
     return kube.getPods().then(function(pods) {
@@ -23,7 +31,7 @@ Status.prototype.execute = function(project, kube) {
             // contain with their definitions in the Project.  Ie.,
             // report if any are missing, indicate if
             if(pod.currentState !== undefined && pod.currentState.info !== undefined) {
-                for (container_key in pod.currentState.info) {
+                for (var container_key in pod.currentState.info) {
                     // TODO: look the container up in the definition
                     if(pod.currentState.info.hasOwnProperty(container_key) && container_key !== "net") {
                         // the info values are docker.Container structs.
@@ -43,6 +51,5 @@ Status.prototype.execute = function(project, kube) {
                 // logger.info(" ... running on host:", util.inspect(pod.currentState));
         });
     });
-};
-
-module.exports = Status;
+  }
+}
