@@ -32,7 +32,8 @@
     "tar-stream": "^0.4.4",
     "walk": "^2.3.3",
     "winston": "^0.7.3",
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "source-map-support": "0.4.0"
   },
   "devDependencies": {
     "mocha": "^1.21.4",

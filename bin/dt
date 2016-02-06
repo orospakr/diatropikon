@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 
+// we want to load the source-map-support hooks to allow for
+// errors in TypeScript modules to properly appear.
+// However, it conflicts with CoffeeScript's (which we
+// load for the use of DSL consumers), so a shitty workaround
+// is to load it first.
+var coffee = require("coffee-script");
+require('source-map-support').install();
+
 process.title = "dt";
 
 // investigate if ember-cli is using the resolve library for any

@@ -40,7 +40,7 @@ export class Diatropikon {
   start() {
     var self = this;
 
-    // self.operations = []
+    self.operations = []
 
     function schedule_operation(op) {
         self.operations.push(op);
